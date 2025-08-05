@@ -79,6 +79,55 @@ Insta-clone/
 - [ ] User follow system
 - [ ] API gateway
 
----
 
-Feel free to contribute or open issues for suggestions!
+The frontend is a Vite + React app located in `frontend/`.
+
+### Running the Frontend
+
+1. Open a terminal and navigate to the frontend directory:
+   ```sh
+   cd frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the Vite dev server:
+   ```sh
+   npm run dev
+   ```
+4. Open your browser to the URL shown in the terminal (usually http://localhost:5173).
+
+### API Integration & CORS
+
+- The frontend expects backend APIs to be available at `http://localhost:<service-port>` (e.g., `auth-service` at `http://localhost:4000`).
+- CORS is enabled in all backend services for `http://localhost:5173`.
+- If you see CORS errors, ensure the backend is running and CORS is enabled in the service's `server.js`.
+
+### Health Check
+
+- Each service can expose a health check endpoint (e.g., `GET /auth/health` for `auth-service`).
+- If you get an empty response or error, check the service logs and ensure the service is running and listening on the correct port.
+
+### Rebuilding & Troubleshooting
+
+To completely rebuild all services and clear volumes:
+```sh
+docker-compose down --volumes --remove-orphans
+docker-compose build --no-cache
+docker-compose up -d
+```
+
+To view logs for all services:
+```sh
+docker-compose logs -f
+```
+Press Ctrl+C to exit logging mode (services keep running).
+
+If you see `net::ERR_EMPTY_RESPONSE` or `socket hangup` errors:
+- Make sure the service is running and healthy (check logs)
+- Ensure the correct port is exposed and mapped
+- Test the endpoint directly with Postman or curl
+
+---
+For questions, troubleshooting, or contributions, please open an issue or pull request!
