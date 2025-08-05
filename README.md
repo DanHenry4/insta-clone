@@ -5,6 +5,11 @@ A scalable, containerized backend for an Instagram-style social media app. Built
 ## 🧱 Microservices
 - `auth-service`: Handles user registration, login, JWT auth, and authentication events
 - `user-service`: Manages user profiles and account data
+- `post-service`: Handles posts and media uploads
+- `feed-service`: Aggregates and serves user feeds
+- `comment-service`: Manages comments on posts
+- `like-service`: Handles likes on posts and comments
+- `notification-service`: Sends notifications based on events
 - `mongo`: MongoDB database
 - `rabbitmq`: Messaging broker for inter-service events
 
@@ -40,6 +45,11 @@ A scalable, containerized backend for an Instagram-style social media app. Built
 Insta-clone/
   ├── auth-service/
   ├── user-service/
+  ├── post-service/
+  ├── feed-service/
+  ├── comment-service/
+  ├── like-service/
+  ├── notification-service/
   ├── utils/           # Shared code (copy into each service for Docker)
   ├── docker-compose.yml
   ├── docker-compose.override.yml
@@ -47,7 +57,7 @@ Insta-clone/
 ```
 
 ## 🔄 Live Reload (Development)
-- Nodemon is used for hot-reloading in both services.
+- Nodemon is used for hot-reloading in all services.
 - `docker-compose.override.yml` mounts your code for live editing, but keeps `node_modules` in the container.
 - Remove or comment out the `volumes` section in production for best performance and reliability.
 - **Production run:**
@@ -58,10 +68,16 @@ Insta-clone/
 ## 📌 Features
 - [x] Auth service with JWT and event publishing
 - [x] User profile service
+- [x] Post/media service with uploads
+- [x] Feed service
+- [x] Comment service
+- [x] Like service (posts & comments)
+- [x] Notification service
 - [x] Event-driven messaging with RabbitMQ
 - [x] Live reload for development
-- [ ] Media service (coming soon)
-- [ ] Feed, comments, likes, notifications, etc.
+- [ ] Advanced media storage (cloud)
+- [ ] User follow system
+- [ ] API gateway
 
 ---
 
