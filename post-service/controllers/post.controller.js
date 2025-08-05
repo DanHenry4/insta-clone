@@ -1,9 +1,14 @@
 const Post = require('../models/post.model');
 const { publishToQueue } = require('../utils/rabbitmq');
+const path = require('path');
 
 exports.createPost = async (req, res) => {
-  const { caption, imageUrl } = req.body;
-  const userId = req.user?._id || req.body.userId; // Prefer authenticated user
+  const { caption } = req.body;
+  const userId = req.user._id || req.body.userId; // Prefer authenticated user
+  let imageUrl = req.body.imageUrl;
+  if (req.file) {
+    imageUrl = `/uploads/${req.file.filename}`;
+  }
   if (!userId || !imageUrl) return res.status(400).json({ message: 'userId and imageUrl are required' });
   const post = await Post.create({ userId, caption, imageUrl });
   // Publish post_created event to RabbitMQ

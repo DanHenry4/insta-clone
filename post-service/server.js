@@ -2,9 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const postRoutes = require('./routes/post.routes');
 require('dotenv').config();
+const path = require('path');
 
 const app = express();
 app.use(express.json());
+
+// Serve uploaded images
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/posts', postRoutes);
 

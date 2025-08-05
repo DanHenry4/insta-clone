@@ -36,6 +36,54 @@ services:
     networks:
       - insta-net
 
+  feed-service:
+    build: ./feed-service
+    container_name: feed-service
+    ports:
+      - "4003:4003"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/feeddb
+    depends_on:
+      - mongo
+    networks:
+      - insta-net
+
+  comment-service:
+    build: ./comment-service
+    container_name: comment-service
+    ports:
+      - "4004:4004"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/commentdb
+    depends_on:
+      - mongo
+    networks:
+      - insta-net
+
+  like-service:
+    build: ./like-service
+    container_name: like-service
+    ports:
+      - "4005:4005"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/likedb
+    depends_on:
+      - mongo
+    networks:
+      - insta-net
+
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    ports:
+      - "4006:4006"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/notificationdb
+    depends_on:
+      - mongo
+    networks:
+      - insta-net
+
   mongo:
     image: mongo:6
     container_name: mongo
