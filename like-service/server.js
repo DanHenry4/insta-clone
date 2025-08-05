@@ -3,7 +3,14 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const likeRoutes = require('./routes/like.routes');
 
+const cors = require('cors');
+
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
 app.use(express.json());
 
 app.use('/api/likes', likeRoutes);

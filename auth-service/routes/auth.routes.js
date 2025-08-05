@@ -18,4 +18,9 @@ router.get('/me', authMiddleware, (req, res) => {
   res.status(200).json({ user: req.user });
 });
 
+// Health check endpoint
+router.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 module.exports = router;
