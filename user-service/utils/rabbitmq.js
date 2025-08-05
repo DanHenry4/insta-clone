@@ -1,6 +1,6 @@
-const amqp = require('amqplib');
-
 // Common RabbitMQ utility for connecting, publishing, and consuming messages
+
+const amqp = require('amqplib');
 
 let connection = null;
 let channel = null;

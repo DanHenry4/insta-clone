@@ -9,8 +9,8 @@ services:
       - JWT_SECRET=your_super_secret_key
     depends_on:
       - mongo
-    volumes:
-      - ./auth-service:/app
+    # volumes:
+    #   - ./auth-service:/app
     networks:
       - insta-net
 
@@ -23,8 +23,8 @@ services:
       - MONGO_URI=mongodb://mongo:27017/userdb
     depends_on:
       - mongo
-    volumes:
-      - ./user-service:/app
+    # volumes:
+    #   - ./user-service:/app
     networks:
       - insta-net
 
