@@ -5,6 +5,9 @@ const cors = require('cors');
 const authRoutes = require('./routes/auth.routes');
 
 dotenv.config();
+
+console.log('Auth - JWT_SECRET:', process.env.JWT_SECRET);
+
 const app = express();
 app.use(cors({
   origin: 'http://localhost:5173',

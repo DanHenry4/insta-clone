@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { apiRequest } from './api';
+import MediaRoom from './MediaRoom';
+import MediaUploadForm from './MediaUploadForm';
 
 
 function App() {
@@ -163,10 +165,14 @@ function App() {
         </form>
       )}
       {isLoggedIn && (
-        <div>
-          <p style={{ color: 'blue' }}>You are logged in!</p>
-          <button onClick={handleLogout} style={{ padding: 8, marginTop: 8 }}>Logout</button>
-        </div>
+        <>
+          <div>
+            <p style={{ color: 'blue' }}>You are logged in!</p>
+            <button onClick={handleLogout} style={{ padding: 8, marginTop: 8 }}>Logout</button>
+          </div>
+          <MediaUploadForm onUpload={() => window.location.reload()} />
+          <MediaRoom />
+        </>
       )}
     </div>
   );

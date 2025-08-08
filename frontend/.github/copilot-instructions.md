@@ -1,67 +1,55 @@
-<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
+### **Project Spec: A Personalized Media Canvas**
 
 This is a Vite + React frontend for the Insta-clone project. Use best practices for API integration, authentication, and state management. Avoid demo code and keep components modular.
 
-You are an expert UI/UX designer specializing in futuristic, interactive interfaces, drawing inspiration from sci-fi films like "Minority Report" and "Iron Man," as well as cutting-edge AR/VR/MR and Natural User Interface (NUI) principles.
+---
 
-Your task is to design the core interface for a media sharing website that moves beyond traditional scrolling and swiping. The interface should be highly interactive, immersive, and intuitive, leveraging spatial computing, advanced gestures, multimodal input, and haptic feedback.
+### **User Experience and Core Concept**
 
-**Target User Experience:**
-The user experience should feel natural, seamless, and almost magical. Interactions should prioritize direct manipulation and "performance aesthetics" – the joy of doing. The system should be context-aware, adapting to user intent and environment.
+The user experience should feel like building and curating a living, personal art collage. Instead of a linear, scroll-based feed, the user is presented with a large, interactive **canvas**. This canvas is a dynamic space where all their media—photos, videos, and collections—live. The user can arrange, resize, and prioritize content based on its personal significance.
 
-**Core Interaction Paradigms:**
+The interface prioritizes **direct manipulation** and personalization, allowing the user to make certain relationships or memories physically larger and more prominent on their canvas.
 
-1.  **Spatial Computing & 3D Environment:**
-    * **Visual Metaphor:** Media is displayed within a navigable 3D space (e.g., a "memory sphere," a dynamic content cloud, a holographic timeline, or a personalized "media room").
-    * **Navigation:** Users can "walk through," "fly through," or "zoom into" content clusters. Content can be anchored to real-world physical spaces (Augmented/Mixed Reality).
-    * **Content Representation:** Images, videos, and 3D models appear as volumetric projections or interactive holograms that can be freely manipulated in 3D space.
+---
 
-2.  **Gesture-Based Control:**
-    * **Broad Gestures (Minority Report style):** Define gestures for large-scale navigation (e.g., sweeping arm movements to browse categories, "flinging" content to dismiss or share).
-    * **Fine Gestures (Hand/Finger Tracking):** Define gestures for precise manipulation (e.g., pinching to zoom into media, rotating hands to spin 3D objects/videos, grabbing to move content, stretching to resize, "peeling" layers to reveal metadata).
-    * **Gesture Library:** Suggest a core set of intuitive, learnable gestures for common actions (select, open, close, group, share).
+### **Core Interaction Paradigms**
 
-3.  **Multimodal Input Integration:**
-    * **Voice Commands:** Integrate natural language processing for search ("Show me videos from last summer"), content control ("Play next video," "Fast forward 10 seconds"), organization ("Create album 'Hiking Trip'"), and sharing ("Share this with Sarah").
-    * **Gaze Tracking:** Implement gaze-based selection (e.g., looking at an object highlights it), gaze-activated menus, and subtle gaze gestures for confirmation or quick actions.
-    * **Haptic Feedback:**
-        * **Tactile/Vibration:** Provide subtle vibrations for interaction confirmation (e.g., successful selection, new notification), simulating textures of media (e.g., rough for a photo of a brick wall), or synchronized with audio/video content.
-        * **Non-contact Haptics (Conceptual):** Explore concepts like localized air pressure or ultrasonic sensations for specific interactive elements (e.g., feeling a "pop" when opening a video, a "push" when moving a large file).
+1.  **The Canvas: A Dynamic Workspace**
+    * **Visual Metaphor:** The main interface is a vast, two-dimensional canvas. It can be thought of as a digital bulletin board, a scrapbook, or a personalized wall of memories.
+    * **Navigation:** Users can pan across the canvas to view different areas and zoom in and out to adjust their perspective. A mini-map or overview tool could help navigate very large canvases.
+    * **Content Representation:** Each piece of media (an image, a video, a collection) is a resizable, draggable element on the canvas. These elements can be placed anywhere, creating a non-linear, personalized arrangement.
 
-4.  **Direct Manipulation:**
-    * Users should feel like they are physically interacting with digital objects. Actions should have immediate, tangible feedback.
-    * "What you do is what you get" principle: The interface responds directly to user actions without abstract controls.
+2.  **Direct Manipulation and Resizing**
+    * **Prioritizing Content:** The core interaction is the ability to **resize** media elements. By making a photo of a family member larger, the user is visually and functionally prioritizing that content. Conversely, an element from a random account can be shrunken to take up less space.
+    * **Groups and Collections:** Media can be grouped into collections, which are represented as resizable containers on the canvas. For example, a "Friends" collection could be a large, dynamic block on the canvas that contains smaller, individual media elements. The entire block can be resized and moved as a single unit.
+    * **Responsive Layout:** The layout of the canvas is not fixed. As the user resizes one element, surrounding elements might dynamically shift to accommodate the change, creating a fluid, organic feel.
 
-**Key Functional Requirements & Design Elements:**
+---
+
+### **Key Functional Requirements & Design Elements**
 
 * **Media Upload:**
-    * Intuitive spatial "drop zones" for media.
-    * Gesture-activated in-environment camera/video recording.
-    * Contextual upload suggestions.
+    * Users can "pin" new media to an empty spot on the canvas.
+    * A simple drag-and-drop from the desktop would place the new media directly onto the canvas.
 * **Media Browse & Discovery:**
-    * Dynamic 3D content organization (e.g., media clustering by theme, date, or location in 3D space).
-    * Interactive volumetric previews.
-    * Gesture-based filtering and sorting.
-    * Gaze-activated content recommendations.
+    * Users can browse their canvas by simply panning and zooming.
+    * There could be a search function that highlights relevant media on the canvas, or temporarily reorganizes the canvas to bring all matching media to the forefront.
+    * Pre-set views could be offered, such as a "chronological" layout that temporarily organizes media by date.
 * **Media Organization:**
-    * Spatial grouping of media (e.g., "stacking" photos, "drawing" a boundary around content to create an album).
-    * Gesture-based tagging and categorization.
-    * Voice-controlled organization.
+    * **Grouping:** Users can drag media elements on top of each other to create a stack, forming a collection.
+    * **Customization:** Each collection could have a title or a custom background color to distinguish it. Users could also choose to display the collection as a single, large image or a collage of the contained media.
 * **Media Sharing & Collaboration:**
-    * "Throwing" or "pushing" media to other users' avatars or designated shared spatial zones.
-    * Real-time collaborative interaction with media in a shared AR/VR workspace (e.g., multiple users annotating a video hologram simultaneously).
-    * Multimodal communication channels within the shared space (voice chat, spatial annotations, gesture-based reactions).
+    * Sharing would involve selecting an element or a collection and "sending" it to another user. This could be represented visually by the element animating from the user's canvas to the recipient's.
+    * For collections, a "shared canvas" feature could allow multiple users to collaborate on a single section, arranging and adding media together.
 * **Media Interaction & Basic Editing:**
-    * Direct manipulation for resizing, rotating, and basic cropping of media.
-    * Spatial annotation tools (drawing, text, 3D markers directly on/around media).
-    * Voice commands for playback control and simple edits.
+    * Clicking on a media element would expand it into a full-screen view for closer inspection, and basic editing tools (cropping, filters) could be accessed there.
+    * Videos would play directly on the canvas, and their size would determine their visual prominence.
 
-**Visual Design & Aesthetics:**
+---
 
-* **Minimalist & Contextual UI:** Interface elements appear only when needed, providing "scaffolding" for interaction.
-* **Translucent/Holographic Elements:** UI components blend seamlessly with the environment.
-* **Dynamic Visual Feedback:** Elements react fluidly to user input (e.g., glowing on hover, rippling on touch).
-* **Clean, Futuristic Typography and Iconography.**
+### **Visual Design & Aesthetics**
 
-**Output Format:**
-Provide a detailed description of the interface, focusing on how a user would perform the core actions (upload, browse, organize, share, interact) using the specified interaction paradigms. Include specific examples of gestures, voice commands, and visual/haptic feedback. Describe the overall look and feel, and how communication/collaboration would be integrated.
+* **Minimalist & Functional UI:** UI controls (like a zoom slider or search bar) would be minimal and unobtrusive, appearing only when needed.
+* **Clean and Direct:** The focus is on the content itself. Media elements would have clean borders and shadows to give them a tangible, "pasted-on" feel.
+* **Fluid Transitions:** All movements—panning, zooming, resizing—should be smooth and animated, making the experience feel responsive and alive.
+* **Layering:** Elements can be layered on top of each other, creating a sense of depth and allowing users to prioritize certain pieces of media over others.

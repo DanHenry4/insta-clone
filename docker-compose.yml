@@ -6,7 +6,7 @@ services:
       - "4000:4000"
     environment:
       - MONGO_URI=mongodb://mongo:27017/authdb
-      - JWT_SECRET=your_super_secret_key
+      - JWT_SECRET=superSecretKey123
     depends_on:
       - mongo
     networks:
@@ -19,6 +19,7 @@ services:
       - "4001:4001"
     environment:
       - MONGO_URI=mongodb://mongo:27017/userdb
+      - JWT_SECRET=superSecretKey123
     depends_on:
       - mongo
     networks:
@@ -31,6 +32,7 @@ services:
       - "4002:4002"
     environment:
       - MONGO_URI=mongodb://mongo:27017/postdb
+      - JWT_SECRET=superSecretKey123
     depends_on:
       - mongo
     networks:
@@ -43,6 +45,7 @@ services:
       - "4003:4003"
     environment:
       - MONGO_URI=mongodb://mongo:27017/feeddb
+      - JWT_SECRET=superSecretKey123
     depends_on:
       - mongo
     networks:
@@ -55,6 +58,7 @@ services:
       - "4004:4004"
     environment:
       - MONGO_URI=mongodb://mongo:27017/commentdb
+      - JWT_SECRET=superSecretKey123
     depends_on:
       - mongo
     networks:
@@ -67,6 +71,7 @@ services:
       - "4005:4005"
     environment:
       - MONGO_URI=mongodb://mongo:27017/likedb
+      - JWT_SECRET=superSecretKey123
     depends_on:
       - mongo
     networks:
@@ -79,6 +84,7 @@ services:
       - "4006:4006"
     environment:
       - MONGO_URI=mongodb://mongo:27017/notificationdb
+      - JWT_SECRET=superSecretKey123
     depends_on:
       - mongo
     networks:
